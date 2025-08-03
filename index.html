@@ -1,57 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5o6M5o+h5pyq5p2l55qE5aWz56We</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: repeating-radial-gradient(#000 0px, #111 1px, #000 2px);
-      animation: snow 1s infinite linear;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5o6M5o+h5pyq5p2l55qE5aWz56We</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    @keyframes snow {
-      from { background-position: 0 0; }
-      to { background-position: 100% 100%; }
-    }
+    body, html {
+      height: 100%;
+      overflow: hidden; /* 防止页面滚动 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
 
-    .container {
-      background: #000;
-      color: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      word-break: break-word;
-      overflow-wrap: break-word;
-    }
+    /* 优化背景效果 */
+    body {
+      background: repeating-radial-gradient(#000 0px, #111 1px, #000 2px);
+      background-size: 20px 20px; /* 控制背景的粒度 */
+      animation: snow 1s infinite linear;
+    }
 
-    .number {
-      font-size: 2.5rem;
-      margin: 1rem 0;
-    }
+    @keyframes snow {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
 
-    .footer-text {
-      font-size: 1rem;
-      opacity: 0.7;
-    }
-  </style>
+    .container {
+      background-color: #000;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      word-break: break-word;  /* 自动换行 */
+      overflow-wrap: break-word; /* 防止文字溢出 */
+      word-wrap: break-word;  /* 兼容旧版浏览器 */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      margin: 0 auto;
+    }
+
+    .number {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
+
+    .footer-text {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    /* 手机端优化 */
+    @media (max-width: 600px) {
+      .number {
+        font-size: 2rem;
+      }
+
+      .footer-text {
+        font-size: 0.9rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+        width: 95%;  /* 更适合小屏幕 */
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="number">1.165848</div>
-    <div class="footer-text">
-      5Y+R6YCB5L+h5oGv77yM5pS55Y+Y6L+H5Y6744CC5aaC5p6c5L2g55yL5Yiw5LiK6Z2i6L+Z6KGM
-      5pWw5a2X5Y+Y5YyW55qE6K+d77yM6K+05piO5L2g5oiQ5Yqf5LqG
-    </div>
-  </div>
+  <div class="container">
+    <div class="number">1.165848</div>
+    <div class="footer-text">
+      5Y+R6YCB5L+h5oGv77yM5pS55Y+Y6L+H5Y6744CC5aaC5p6c5L2g55yL5Yiw5LiK6Z2i6L+Z6KGM
+      5pWw5a2X5Y+Y5YyW55qE6K+d77yM6K+05piO5L2g5oiQ5Yqf5LqG
+    </div>
+  </div>
 </body>
 </html>
