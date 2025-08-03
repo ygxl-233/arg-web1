@@ -1,59 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>5o6M5o+h5pyq5p2l55qE5aWz56We</title>
   <style>
-    html, body {
+    body, html {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: black;
-      overflow: hidden;
+      background: repeating-radial-gradient(#000 0px, #111 1px, #000 2px);
+      animation: snow 1s infinite linear;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image:
-        repeating-radial-gradient(circle, white 0.5px, transparent 1px);
-      background-size: 2px 2px;
-      opacity: 0.1;
-      z-index: 0;
-      animation: noise 0.2s infinite;
+    @keyframes snow {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
     }
 
-    @keyframes noise {
-      0% { background-position: 0 0; }
-      25% { background-position: 5px 5px; }
-      50% { background-position: -5px 5px; }
-      75% { background-position: 5px -5px; }
-      100% { background-position: -5px -5px; }
-    }
-
-    blockquote {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: black;
-      color: white;
-      border: 2px solid white;
-      padding: 2em;
-      font-size: 1.5em;
-      max-width: 80%;
+    .container {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
       text-align: center;
-      z-index: 1;
+    }
+
+    .number {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
+
+    .footer-text {
+      font-size: 1rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <blockquote>
-    Please Answer My Question Carefully!
-  </blockquote>
+  <div class="container">
+    <div class="number">1.165848</div>
+    <div class="footer-text">5Y+R6YCB5L+h5oGv77yM5pS55Y+Y6L+H5Y6744CC5aaC5p6c5L2g55yL5Yiw5LiK6Z2i6L+Z6KGM
+5pWw5a2X5Y+Y5YyW55qE6K+d77yM6K+05piO5L2g5oiQ5Yqf5LqG</div>
+  </div>
 </body>
 </html>
