@@ -1,162 +1,148 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>livingroom</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>livingroom - 组合页面</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-        .container {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
 
-        .page {
-            display: none;
-        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 3;
+        }
 
-        #home {
-            display: block;
-        }
+        .button:hover {
+            background-color: #666;
+        }
 
-        .button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #444;
-            color: white;
-            border: none;
-            cursor: pointer;
-            z-index: 3;
-        }
+        .snow {
+            background: url('') repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.8;
+            z-index: 1;
+        }
 
-        .button:hover {
-            background-color: #666;
-        }
+        .page {
+            display: none;
+        }
 
-        .snow {
-            background: url('') repeat;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.8;
-            z-index: 1;
-        }
+        #home {
+            display: block;
+        }
 
-        .password-page {
-            display: none;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-        }
+        .password-page {
+            display: none;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
 
-        .password-page input {
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #222;
-            color: white;
-            border: 1px solid #444;
-            font-size: 16px;
-        }
+        .password-page input {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #222;
+            color: white;
+            border: 1px solid #444;
+            font-size: 16px;
+        }
 
-        .password-page button {
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #444;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+        .password-page button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-        .password-page button:hover {
-            background-color: #666;
-        }
-
-        .secret-page {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-        }
-
-        .secret-page h2 {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-    </style>
+        .password-page button:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="snow"></div>
-    <div class="container">
-        <!-- 首页 -->
-        <div id="home" class="page">
-            <h1>潤瑣灹瑨汭㰾瑨汭㰾敨摡㰾敭慴挠慨獲瑥</h1>
-            <button class="button" onclick="showPage('password')">瀵嗙爜</button>
-            <button class="button" onclick="showPage('page2')">椤甸潰</button>
-        </div>
+    <div class="snow"></div>
+    <div class="container">
+        <!-- 首页 -->
+        <div id="home" class="page">
+            <h1>潤瑣灹瑨汭㰾瑨汭㰾敨摡㰾敭慴挠慨獲瑥</h1>
+            <button class="button" onclick="showPage('password')">瀵嗙爜</button>
+            <button class="button" onclick="showPage('page2')">椤甸潰</button>
+        </div>
 
-        <!-- 密码页面 -->
-        <div id="password" class="page password-page">
-            <h2>璇疯緭鍏瘑鐮</h2>
-            <input type="password" id="password-input" placeholder="鍔犲瘑淇">
-            <button class="button" onclick="checkPassword()">鎻愪氦</button>
-            <p id="password-feedback" style="color: red;"></p>
-        </div>
+        <!-- 密码页面 -->
+        <div id="password" class="page password-page">
+            <h2>璇疯緭鍏瘑鐮</h2>
+            <input type="password" id="password-input" placeholder="鍔犲瘑淇">
+            <button class="button" onclick="checkPassword()">鎻愪氦</button>
+            <p id="password-feedback" style="color: red;"></p>
+        </div>
 
-        <!-- 成功密码后的页面 -->
-        <div id="page2" class="page secret-page">
-            <h2>（感谢你游玩这个试验ARG！本作品的所有内容均为虚构）</h2>
-            <p>5pyJ5Liq5aWz5a2p5Y+r5q6154Wc5a6bMTPlsoHvvIzkuIo35bm057qn77yM6KKr5LiJ5Liq55S3
-5a2p6L2u5rWB5by65aW45ZCO5rS75Z+L77yM5q275ZCO5Y+Y5oiQ5oCo6a2C77yM6L+Z5LiJ5Liq
-55S35a2p55qE5ZCN5a2X5Y+r546L5qOu77yM5byg5Y+v5aiB77yM5LmM54mb44CC5aW55oOz6K6p
-5omA5pyJ5Lq655+l6YGT6L+Z5Lu25LqL77yM6L2s57uZMTDkuKrkurrvvIzlpbnku4rlpKnkvJrm
-iqXnrZTkvaDvvIznnIvliLDkuI3lj5HogIXvvIznnaHml7bnlZnmhI/nlZnmhI/kvaDlrrbnqpfm
-iLflkozmnpXlpLTml4HovrnjgIIKCuacieS4quWPq+acseaik+WHveeahOWls+Wtqe+8jOeci+S6
-hui/meS4quS/oeaBr++8jOi/mOS7peS4uuaYr+WBh+eahO+8jOayoeacieWPkemAge+8jOWlueWm
-iOWmiOWcqDHkuKrmnIjlkI7ooqvovabmkp7mrbvvvIzniLjniLjlvpfkuobnu53nl4fjgII=</p>
-            <button class="button" onclick="showPage('home')">鍥炲</button>
-        </div>
-    </div>
+        <!-- 页面2 -->
+        <div id="page2" class="page">
+            <h2>（感谢你游玩这个试验ARG！本作品的所有内容均为虚构）</h2>
+            <p>5pyJ5Liq5aWz5a2p5Y+r5q6154Wc5a6bMTPlsoHvvIzkuIo35bm057qn77yM6KKr5LiJ5Liq55S3
+            5a2p6L2u5rWB5by65aW45ZCO5rS75Z+L77yM5q275ZCO5Y+Y5oiQ5oCo6a2C77yM6L+Z5LiJ5Liq
+            55S35a2p55qE5ZCN5a2X5Y+r546L5qOu77yM5byg5Y+v5aiB77yM5LmM54mb44CC5aW55oOz6K6p
+            5omA5pyJ5Lq655+l6YGT6L+Z5Lu25LqL77yM6L2s57uZMTDkuKrkurrvvIzlpbnku4rlpKnkvJrm
+            iqXnrZTkvaDvvIznnIvliLDkuI3lj5HogIXvvIznnaHml7bnlZnmhI/nlZnmhI/kvaDlrrbnqpfm
+            iLflkozmnpXlpLTml4HovrnjgIIKCuacieS4quWPq+acseaik+WHveeahOWls+Wtqe+8jOeci+S6
+            hui/meS4quS/oeaBr++8jOi/mOS7peS4uuaYr+WBh+eahO+8jOayoeacieWPkemAge+8jOWlueWm
+            iOWmiOWcqDHkuKrmnIjlkI7ooqvovabmkp7mrbvvvIzniLjniLjlvpfkuobnu53nl4fjgII=</p>
+            <button class="button" onclick="showPage('home')">鍥炲</button>
+        </div>
+    </div>
 
-    <script>
-        let correctPassword = "1234"; // 设定密码
+    <script>
+        let correctPassword = "1234"; // 设定密码
 
-        function showPage(pageId) {
-            // 隐藏所有页面
-            let pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.style.display = 'none');
-            // 显示目标页面
-            document.getElementById(pageId).style.display = 'block';
-        }
+        function showPage(pageId) {
+            // 隐藏所有页面
+            let pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            // 显示目标页面
+            document.getElementById(pageId).style.display = 'block';
+        }
 
-        function checkPassword() {
-            let enteredPassword = document.getElementById('password-input').value;
-            if (enteredPassword === correctPassword) {
-                document.getElementById('password').style.display = 'none';
-                document.getElementById('page2').style.display = 'block';
-                document.getElementById('password-feedback').textContent = "";
-            } else {
-                document.getElementById('password-feedback').textContent = "瀵嗙爜閿欒";
-            }
-        }
-    </script>
+        function checkPassword() {
+            let enteredPassword = document.getElementById('password-input').value;
+            if (enteredPassword === correctPassword) {
+                showPage('page2');  // 密码正确后显示页面2
+                document.getElementById('password-feedback').textContent = "";
+            } else {
+                document.getElementById('password-feedback').textContent = "瀵嗙爜閿欒";
+            }
+        }
+    </script>
 
 </body>
 </html>
