@@ -1,86 +1,139 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5o6M5o+h5pyq5p2l55qE5aWz56We</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>livingroom</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-    body, html {
-      height: 100%;
-      overflow: hidden; /* 防止页面滚动 */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: sans-serif;
-    }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
 
-    /* 优化背景效果 */
-    body {
-      background: repeating-radial-gradient(#000 0px, #111 1px, #000 2px);
-      background-size: 20px 20px; /* 控制背景的粒度 */
-      animation: snow 1s infinite linear;
-    }
+        .page {
+            display: none;
+        }
 
-    @keyframes snow {
-      from { background-position: 0 0; }
-      to { background-position: 100% 100%; }
-    }
+        #home {
+            display: block;
+        }
 
-    .container {
-      background-color: #000;
-      color: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      word-break: break-word;  /* 自动换行 */
-      overflow-wrap: break-word; /* 防止文字溢出 */
-      word-wrap: break-word;  /* 兼容旧版浏览器 */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-      margin: 0 auto;
-    }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 3;
+        }
 
-    .number {
-      font-size: 2.5rem;
-      margin: 1rem 0;
-    }
+        .button:hover {
+            background-color: #666;
+        }
 
-    .footer-text {
-      font-size: 1rem;
-      opacity: 0.7;
-    }
+        .snow {
+            background: url('') repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.8;
+            z-index: 1;
+        }
 
-    /* 手机端优化 */
-    @media (max-width: 600px) {
-      .number {
-        font-size: 2rem;
-      }
+        .password-page {
+            display: none;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
 
-      .footer-text {
-        font-size: 0.9rem;
-      }
+        .password-page input {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #222;
+            color: white;
+            border: 1px solid #444;
+            font-size: 16px;
+        }
 
-      .container {
-        padding: 1.5rem;
-        width: 95%;  /* 更适合小屏幕 */
-      }
-    }
-  </style>
+        .password-page button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .password-page button:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="number">1.165848</div>
-    <div class="footer-text">
-      5Y+R6YCB5L+h5oGv77yM5pS55Y+Y6L+H5Y6744CC5aaC5p6c5L2g55yL5Yiw5LiK6Z2i6L+Z6KGM
-      5pWw5a2X5Y+Y5YyW55qE6K+d77yM6K+05piO5L2g5oiQ5Yqf5LqG
+
+    <div class="snow"></div>
+    <div class="container">
+        <div id="home" class="page">
+            <h1>潤瑣灹瑨汭㰾瑨汭㰾敨摡㰾敭慴挠慨獲瑥</h1>
+            <button class="button" onclick="showPage('password')">瀵嗙爜</button>
+            <button class="button" onclick="showPage('page2')">椤甸潰</button>
+        </div>
+
+        <div id="password" class="page password-page">
+            <h2>璇疯緭鍏瘑鐮</h2>
+            <input type="password" id="password-input" placeholder="鍔犲瘑淇">
+            <button class="button" onclick="checkPassword()">鎻愪氦</button>
+            <p id="password-feedback" style="color: red;"></p>
+        </div>
+
+        <div id="page2" class="page">
+            <h2>绁炵椤甸潰浜</h2>
+            <p>瀵绘濆紑杞憿鍙畝鍗曞摝瀹堕タ鍝悆</p>
+            <button class="button" onclick="showPage('home')">鍥炲</button>
+        </div>
     </div>
-  </div>
+
+    <script>
+        let correctPassword = "1234"; // 设定密码
+
+        function showPage(pageId) {
+            // 隐藏所有页面
+            let pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            // 显示目标页面
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        function checkPassword() {
+            let enteredPassword = document.getElementById('password-input').value;
+            if (enteredPassword === correctPassword) {
+                document.getElementById('password').style.display = 'none';
+                document.getElementById('page2').style.display = 'block';
+                document.getElementById('password-feedback').textContent = "";
+            } else {
+                document.getElementById('password-feedback').textContent = "瀵嗙爜閿欒";
+            }
+        }
+    </script>
+
 </body>
 </html>
